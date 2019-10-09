@@ -25,7 +25,7 @@ class usuario extends DB{
         return $query;
     }
 
-    function nuevaPelicula($pelicula){
+    function registrarUsuario($usuario){
         $query = $this->connect()->prepare('INSERT INTO pelicula (nombre, imagen) VALUES (:nombre, :imagen)');
         $query->execute(['nombre' => $pelicula['nombre'], 'imagen' => $pelicula['imagen']]);
         return $query;
