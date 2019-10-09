@@ -68,13 +68,13 @@
                     </div>
                     <div class="uk-card-body">
                             <legend class="uk-legend uk-margin">Introduzca los datos para su cuenta</legend>
-                            <form class="uk-form-stacked">
+                            <form class="uk-form-stacked" id="formregistro">
                                 <div class="uk-margin">
                                     <label class="uk-form-label" for="form-stacked-text">Nombre de usuario</label>
                                     <div class="uk-form-controls">
                                         <div class="uk-inline uk-width-1-1">
                                             <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                            <input class="uk-input" id="form-stacked-text" type="text"
+                                            <input class="uk-input" id="inputnombre" type="text"
                                                 placeholder="Elija un nombre de usuario..." required>
                                         </div>
                                     </div>
@@ -84,7 +84,7 @@
                                     <div class="uk-form-controls">
                                         <div class="uk-inline uk-width-1-1">
                                             <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: pencil"></span>
-                                            <input class="uk-input" id="form-stacked-text" type="text"
+                                            <input class="uk-input" id="inputfirma" type="text"
                                                 placeholder="Configure su firma digital..." required>
                                         </div>
                                     </div>
@@ -94,7 +94,7 @@
                                     <div class="uk-form-controls">
                                         <div class="uk-inline uk-width-1-1">
                                             <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
-                                            <input class="uk-input" id="form-stacked-text" type="password"
+                                            <input class="uk-input" id="inputpassword" type="password"
                                                 placeholder="Escriba su contraseña..." required>
                                         </div>
                                     </div>
@@ -102,7 +102,7 @@
                             </form>
                     </div>
                     <div class="uk-card-footer uk-text-center">
-                        <button uk-icon="icon: check" class="uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom">
+                        <button  id="btnregistrar"  onclick="registrarUsuario()" type="submit" uk-icon="icon: check" class="uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom">
                             Registrarse
                         </button>
                     </div>
@@ -114,6 +114,8 @@
 
     <script src="js/uikit.min.js"></script>
     <script src="js/uikit-icons.min.js"></script>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/funciones.js"></script>
 </body>
 
 </html>
