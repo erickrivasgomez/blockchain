@@ -5,9 +5,9 @@ include_once 'db.php';
 class usuario extends DB{
     
     function autenticarUsuario($credenciales){
-        $query = $this->connect()->prepare('SELECT id FROM usuarios WHERE nombre = :username AND password = md5(:password)');
+        $query = $this->connect()->prepare('SELECT id FROM usuarios WHERE nombre = :nombre AND password = md5(:password)');
         $query->execute([
-            'username' => $credenciales['username'],
+            'nombre' => $credenciales['nombre'],
             'password' => $credenciales['password'],
             ]);
         return $query;
