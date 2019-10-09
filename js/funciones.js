@@ -1,6 +1,7 @@
 function registrarUsuario() {
   
   var datos = {
+    accion: "registrarUsuario",
     nombre: $("#inputnombre").val(),
     firma: $("#inputfirma").val(),
     password: $("#inputpassword").val()
@@ -26,8 +27,13 @@ function autenticarUsuario() {
       url: "./api.php",
       method: "POST",
       data: datos,
+      dataType: "JSON", 
       success: function(result) {
-        alert("Se ha iniciado sesión correctamente");
+        
+        console.log(result);  
+        var resultado=JSON.parse(result[0]);      
+        console.log(resultado);
+        alert(resultado.id);
         
       }
     });
