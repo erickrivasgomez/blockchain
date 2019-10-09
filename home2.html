@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Inicio Blockchain</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+
+            <a class="navbar-brand text-white">Blockchain</a>
+            <form class="form-inline">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerrar sesión</button>
+            </form>
+        </div>
+    </nav>
+    <div class="section py-2">
+        <div class="container">
+            <div class="card m-2 border-dark">
+                <div class="card-header lead">Nueva transacción</div>
+                <div class="card-body">
+                    <form class="form-row" action="{{route('coordinacion.ajustes.agregarPeriodo')}}" method="POST">
+                        <div class="col-12 col-lg-10">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="monto_transaccion">Monto de la transacción</span>
+                                </div>
+                                <input type="text" name="monto_transaccion" id="monto_transaccion" class="form-control"
+                                    aria-describedby="monto_transaccion">
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-2">
+                            <button type="submit" class="btn btn-primary mb-2 btn-block">Finalizar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-3">
+                    <h2 class="text-right">Saldo actual:</h2>
+                </div>
+                <div class="col-3">
+                    <h2>$</h2>
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <table class="table table-sm">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th class="text-center" scope="col">#</th>
+                            <th class="text-center" scope="col">Fecha</th>
+                            <th class="text-center" scope="col">Monto</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

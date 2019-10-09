@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Inicio - Blockchain</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/uikit.css">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="uk-navbar-container uk-margin" style="background: #2579cc;" uk-navbar>
+        <div class="uk-navbar-center">
+            <a class="uk-navbar-item uk-logo" style="color: white" href="index.html"><span uk-icon="icon: link"></span>Blockchain</a>
+        </div>
+    </nav>
+
+    <div class="uk-container">
+        <div uk-grid uk-height-match="target: > div > .uk-card">
+            <div class="uk-width-1-2@s">
+                <div class="uk-card uk-card-default uk-card-hover">
+                    <div class="uk-card-header uk-text-center">
+                        <h3 class="uk-card-title uk-margin-remove-bottom">Iniciar sesión</h3>
+                        <p class="uk-text-meta uk-margin-remove-top">
+                            Inicie sesión para usar nuestra plataforma de Blockchain.
+                        </p>
+                    </div>
+                    <div class="uk-card-body">
+                        <legend class="uk-legend uk-margin">Introduzca sus credenciales</legend>
+                        <form class="uk-form-stacked">
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="form-stacked-text">Nombre de usuario</label>
+                                <div class="uk-form-controls">
+                                    <div class="uk-inline uk-width-1-1">
+                                        <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                        <input class="uk-input" id="form-stacked-text" type="text"
+                                            placeholder="Escriba su nombre de usuario..." required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uk-margin-remove-bottom">
+                                <label class="uk-form-label" for="form-stacked-text">Contraseña</label>
+                                <div class="uk-form-controls">
+                                    <div class="uk-inline uk-width-1-1">
+                                        <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                                        <input class="uk-input" id="form-stacked-text" type="password"
+                                            placeholder="Escriba su contraseña..." required>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="uk-card-footer uk-text-center">
+                        <button uk-icon="icon: sign-in" class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom">
+                            Iniciar sesión
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-width-1-2@s">
+                <div class="uk-card uk-card-default uk-card-hover">
+                    <div class="uk-card-header uk-text-center">
+                        <h3 class="uk-card-title uk-margin-remove-bottom">Registrarse</h3>
+                        <p class="uk-text-meta uk-margin-remove-top">
+                            Cree su cuenta en nuestra plataforma de Blockchain para depósitos y retiros.
+                        </p>
+                    </div>
+                    <div class="uk-card-body">
+                            <legend class="uk-legend uk-margin">Introduzca los datos para su cuenta</legend>
+                            <form class="uk-form-stacked">
+                                <div class="uk-margin">
+                                    <label class="uk-form-label" for="form-stacked-text">Nombre de usuario</label>
+                                    <div class="uk-form-controls">
+                                        <div class="uk-inline uk-width-1-1">
+                                            <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                            <input class="uk-input" id="form-stacked-text" type="text"
+                                                placeholder="Elija un nombre de usuario..." required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="uk-margin">
+                                    <label class="uk-form-label" for="form-stacked-text">Firma digital</label>
+                                    <div class="uk-form-controls">
+                                        <div class="uk-inline uk-width-1-1">
+                                            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: pencil"></span>
+                                            <input class="uk-input" id="form-stacked-text" type="text"
+                                                placeholder="Configure su firma digital..." required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="uk-margin-remove-bottom">
+                                    <label class="uk-form-label" for="form-stacked-text">Contraseña</label>
+                                    <div class="uk-form-controls">
+                                        <div class="uk-inline uk-width-1-1">
+                                            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                                            <input class="uk-input" id="form-stacked-text" type="password"
+                                                placeholder="Escriba su contraseña..." required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                    </div>
+                    <div class="uk-card-footer uk-text-center">
+                        <button uk-icon="icon: check" class="uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom">
+                            Registrarse
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+</body>
+
+</html>
