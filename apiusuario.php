@@ -108,7 +108,7 @@ class apiusuario
 
     public function printJSON($array)
     {
-        echo '<code>' . json_encode($array) . '</code>';
+        echo json_encode($array);
     }
 
     public function getError()
