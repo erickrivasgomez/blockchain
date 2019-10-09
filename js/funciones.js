@@ -26,14 +26,13 @@ function autenticarUsuario() {
     $.ajax({
       url: "./api.php",
       method: "POST",
-      data: datos,
-      dataType: "JSON", 
+      data: datos, 
       success: function(result) {
         
         console.log(result);  
-        var resultado=JSON.parse(result[0]);      
-        console.log(resultado);
-        alert(resultado.id);
+        var resultado=JSON.parse(result);      
+        console.log(JSON.parse(result));
+        alert(resultado.usuario[0]);
         
       }
     });

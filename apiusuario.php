@@ -71,6 +71,7 @@ class apiusuario
     {
         $usuario = new Usuario();
         $respuesta = array();
+        $respuesta["usuario"]=array();
 
         $res = $usuario->autenticarUsuario($credenciales);
 
@@ -80,7 +81,7 @@ class apiusuario
                 $item = array(
                     "id" => $row['id'],
                 );
-                array_push($respuesta, $item);
+                array_push($respuesta["usuario"], json_encode($item));
             }
             $this->printJSON($respuesta);
         } else {
