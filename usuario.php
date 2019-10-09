@@ -5,11 +5,10 @@ include_once 'db.php';
 class usuario extends DB{
     
     function autenticarUsuario($credenciales){
-        $query = $this->connect()->prepare('SELECT id FROM usuarios WHERE nombre = :username AND password = :password');
-        echo  md5($credenciales['password']);
+        $query = $this->connect()->prepare('SELECT id FROM usuarios WHERE nombre = :username AND password = md5(:password)');
         $query->execute([
             'username' => $credenciales['username'],
-            'password' => md5($credenciales['password']),
+            'password' => $credenciales['password'],
             ]);
         return $query;
     }
@@ -26,8 +25,12 @@ class usuario extends DB{
     }
 
     function registrarUsuario($usuario){
-        $query = $this->connect()->prepare('INSERT INTO pelicula (nombre, imagen) VALUES (:nombre, :imagen)');
-        $query->execute(['nombre' => $pelicula['nombre'], 'imagen' => $pelicula['imagen']]);
+        $query = $this->connect()->prepare('INSERT INTO usuarios (nombre, password, firma) VALUES (:nombre, md5(:password), :firma)');
+        $query->execute([
+            'nombre' => $usuario['nombre'],
+            'password' => $usuario['password'],
+            'firma' => $usuario['firma'],
+            ]);
         return $query;
     }
 

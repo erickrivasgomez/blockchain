@@ -56,19 +56,33 @@ class apiusuario
         }
     }
 
+    public function registrar($datos_usuario)
+    {
+        $usuario = new Usuario();
+        $respuesta = array();
+        $respuesta["items"] = array();
+
+        $res = $usuario->registrarUsuario($datos_usuario);
+
+        return $res;
+    }
+
     public function autenticar($credenciales)
     {
         $usuario = new Usuario();
         $respuesta = array();
+        $respuesta["items"] = array();
 
-        $resultado = $usuario->autenticarUsuario($credenciales);
-        if ($resultado->rowCount() == 1) {
-            $row = $res->fetch();
+        $res = $usuario->autenticarUsuario($credenciales);
 
-            $item = array(
-                "id" => $row['id'],
-            );
-            array_push($respuesta["items"], $item);
+        if ($res->rowCount()) {
+            while ($row = $res->fetch(PDO::FETCH_ASSOC)) {
+
+                $item = array(
+                    "id" => $row['id'],
+                );
+                array_push($respuesta["items"], $item);
+            }
             $this->printJSON($respuesta);
         } else {
             $this->error(null);
@@ -96,53 +110,6 @@ class apiusuario
     public function printJSON($array)
     {
         echo '<code>' . json_encode($array) . '</code>';
-    }
-
-    public function subirImagen($file)
-    {
-        $directorio = "imagenes/";
-
-        $this->imagen = basename($file["name"]);
-        $archivo = $directorio . basename($file["name"]);
-
-        $tipoArchivo = strtolower(pathinfo($archivo, PATHINFO_EXTENSION));
-
-        // valida que es imagen
-        $checarSiImagen = getimagesize($file["tmp_name"]);
-
-        if ($checarSiImagen != false) {
-            //validando tamaño del archivo
-            $size = $file["size"];
-
-            if ($size > 500000) {
-                $this->error = "El archivo tiene que ser menor a 500kb";
-                return false;
-            } else {
-
-                //validar tipo de imagen
-                if ($tipoArchivo == "jpg" || $tipoArchivo == "jpeg") {
-                    // se validó el archivo correctamente
-                    if (move_uploaded_file($file["tmp_name"], $archivo)) {
-                        //echo "El archivo se subió correctamente";
-                        return true;
-                    } else {
-                        $this->error = "Hubo un error en la subida del archivo";
-                        return false;
-                    }
-                } else {
-                    $this->error = "Solo se admiten archivos jpg/jpeg";
-                    return false;
-                }
-            }
-        } else {
-            $this->error = "El documento no es una imagen";
-            return false;
-        }
-    }
-
-    public function getImagen()
-    {
-        return $this->imagen;
     }
 
     public function getError()
