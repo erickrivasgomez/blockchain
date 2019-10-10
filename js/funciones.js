@@ -28,11 +28,12 @@ function autenticarUsuario() {
       method: "POST",
       data: datos, 
       success: function(result) {
-        
-        console.log(result);  
-        var resultado=JSON.parse(result);      
-        console.log(JSON.parse(result));
-        alert(resultado.usuario[0]);
+        var resultado=JSON.parse(result);
+        if (resultado != null) {
+          // Redireccionar a home
+        } else {
+          // Alerta de datos incorrectos
+        }
         
       }
     });

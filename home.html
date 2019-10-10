@@ -6,22 +6,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/uikit.css" />
-    <link href="css/styles.css" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="uk-navbar-container uk-margin" style="background: #2579cc;" uk-navbar>
-            <div class="uk-navbar-center">
+    <nav class="uk-navbar-container uk-margin" style="background: #2579cc; color: white;" uk-navbar>
+        <div class="uk-navbar-center">
             <div class="uk-navbar-center-left">
-                dxcvbj
             </div>
-            <a class="uk-navbar-item uk-logo" style="color: white" href="index.html"><span
-                    uk-icon="icon: link"></span>Blockchain</a>
+            <a class="uk-navbar-item uk-logo" style="color: white" href="index.html">
+                <span uk-icon="icon: link"></span>
+                Blockchain
+            </a>
+            <div class="uk-navbar-center-right">
+                <div>
+                    <ul class="uk-navbar-nav">
+                        <li>
+                            <a href="" style="color: white">Cerrar sesión<span uk-icon="icon: sign-out"></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </nav>
 
     <div class="uk-container">
-
+        <div class="uk-grid" uk-grid>
+            <div class="uk-width-1-4"></div>
+            <div class="uk-width-1-4">
+                <div>
+                    <div class="uk-tile uk-tile-primary uk-padding-small uk-text-right">
+                        <p class="uk-h4">Saldo actual:</p>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-width-1-4">
+                <div>
+                    <div class="uk-tile uk-tile-secondary uk-padding-small uk-text-left">
+                        <p class="uk-h4">$ .00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-width-1-4"></div>
+        </div>
+        <hr class="uk-divider-icon">
+        <div class="uk-width-1-1@s">
+            <div class="uk-card uk-card-default uk-card-hover">
+                <div class="uk-card-body">
+                    <legend class="uk-legend uk-margin">Nueva transacción</legend>
+                    <form class="uk-grid-small uk-form-horizontal" uk-grid>
+                        <div class="uk-width-1-5@s">
+                            <label class="uk-form-label uk-text-right" for="form-horizontal-text">Monto de la
+                                transacción:</label>
+                        </div>
+                        <div class="uk-width-3-5@s">
+                            <input class="uk-input" id="form-horizontal-text" type="text" placeholder="">
+                        </div>
+                        <div class="uk-width-1-5@s">
+                            <button id="btnlogin" onclick="autenticarUsuario()" type="submit" uk-icon="icon: sign-in"
+                                class="uk-button uk-button-primary uk-margin-small-bottom">
+                                Confirmar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <hr class="uk-divider-icon">
+        <div class="uk-overflow-auto">
+            <h1 class="uk-h2 uk-text-center">Historial de transacciones</h1>
+            <table class="uk-table uk-table-small uk-text-center uk-table-striped">
+                <thead>
+                    <tr>
+                        <th class="uk-text-center">#</th>
+                        <th class="uk-text-center">Fecha</th>
+                        <th class="uk-text-center">Monto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>abjdk</td>
+                        <td>abjdk</td>
+                        <td>abjdk</td>
+                    </tr>
+                    <tr>
+                        <td>abjdk</td>
+                        <td>abjdk</td>
+                        <td>abjdk</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <script src="js/uikit.min.js"></script>
