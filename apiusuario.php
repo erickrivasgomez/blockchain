@@ -82,6 +82,7 @@ class apiusuario
                     "id" => $row['id'],
                 );
                 //array_push($respuesta["usuario"], json_encode($item));
+                $_SESSION["id"] = $item["id"];
                 $respuesta = $item;
             }
             $this->printJSON($respuesta);
