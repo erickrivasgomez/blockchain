@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-10-2019 a las 18:27:12
+-- Tiempo de generación: 11-10-2019 a las 16:47:38
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.8
 
@@ -38,6 +38,13 @@ CREATE TABLE `transacciones` (
   `puntero` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `transacciones`
+--
+
+INSERT INTO `transacciones` (`id`, `id_usuario`, `certificado`, `monto`, `fecha`, `comprobado`, `puntero`) VALUES
+(1, 1, 'fdk', '100.00', '2019-10-04 13:00:27', 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -47,9 +54,18 @@ CREATE TABLE `transacciones` (
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `nombre` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` text NOT NULL,
   `firma` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre`, `password`, `firma`) VALUES
+(1, 'Juan', 'juan', 'juanito'),
+(2, 'Erick', 'e617513c2266abd46f62e3763bef992b', 'fdk4'),
+(3, 'Mike', 'e81cdc8c5fe27eb6e14fa9f7ee6c78c0', 'qwerty');
 
 --
 -- Índices para tablas volcadas
@@ -66,8 +82,7 @@ ALTER TABLE `transacciones`
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `firma` (`firma`) USING HASH;
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -77,7 +92,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas

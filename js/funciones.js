@@ -30,7 +30,7 @@ function autenticarUsuario() {
       success: function(result) {
         var resultado=JSON.parse(result);
         if (resultado != null) {
-          // Redireccionar a home
+          location.href ="home.html";
         } else {
           // Alerta de datos incorrectos
         }
